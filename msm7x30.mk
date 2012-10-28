@@ -41,6 +41,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 PRODUCT_COPY_FILES += \
+    device/semc/msm7x30-common/prebuilt/fillers:root/fillers \
     device/semc/msm7x30-common/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
     device/semc/msm7x30-common/prebuilt/media_codecs.xml:system/etc/media_codecs.xml \
     device/semc/msm7x30-common/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
@@ -51,9 +52,8 @@ PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/fstab:root/fstab \
     device/semc/msm7x30-common/prebuilt/fstab.semc:root/fstab.semc \
     device/semc/msm7x30-common/prebuilt/bootrec:root/sbin/bootrec \
-    device/semc/msm7x30-common/prebuilt/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh
-
-#    device/semc/msm7x30-common/prebuilt/fillers:root/fillers \
+    device/semc/msm7x30-common/prebuilt/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh \
+    device/semc/msm7x30-common/prebuilt/nandroid-md5.sh:root/sbin/nandroid-md5.sh
 
 #Audio
 PRODUCT_PACKAGES += \
@@ -122,10 +122,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     hwui.disable_vsync=true \
     debug.mdpcomp.logs=0 \
     BUILD_UTC_DATE=0 \
-    persist.sys.usb.config=mass_storage \
-    debug.camcorder.disablemeta=1
+    persist.sys.usb.config=mass_storage,adb \
+    debug.camcorder.disablemeta=1 \
+    persist.sys.strictmode.disable=1 \
+    debug.performance.tuning=1 \
+    video.accelerate.hw=1
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.hardware.respect_als=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.respect_als=true
 
 #    debug.mdpcomp.maxlayer=3 \
