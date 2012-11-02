@@ -41,6 +41,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 PRODUCT_COPY_FILES += \
+    device/semc/msm7x30-common/prebuilt/fillers:root/fillers \
     device/semc/msm7x30-common/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
     device/semc/msm7x30-common/prebuilt/media_codecs.xml:system/etc/media_codecs.xml \
     device/semc/msm7x30-common/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
@@ -53,8 +54,6 @@ PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/bootrec:root/sbin/bootrec \
     device/semc/msm7x30-common/prebuilt/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh \
     device/semc/msm7x30-common/prebuilt/nandroid-md5.sh:root/sbin/nandroid-md5.sh
-
-#    device/semc/msm7x30-common/prebuilt/fillers:root/fillers \
 
 #Audio
 PRODUCT_PACKAGES += \
@@ -128,6 +127,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.strictmode.disable=1 \
     debug.performance.tuning=1 \
     video.accelerate.hw=1
+
+# Better video streaming
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.enable-meta=true \
+    media.stagefright.enable-scan=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-record=false
+
+# Better internet browsing & download speed
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tcp.buffersize.default=6144,87380,110208,6144,16384,110208 \
+    net.tcp.buffersize.wifi=262144,524288,1048576,262144,524288,1048576 \
+    net.tcp.buffersize.hsdpa=6144,262144,1048576,6144,262144,1048576 \
+    net.tcp.buffersize.umts=6144,87380,110208,6144,16384,110208 \
+    net.tcp.buffersize.hspa=6144,87380,262144,6144,16384,262144 \
+    net.tcp.buffersize.gprs=6144,8760,11680,6144,8760,11680 \
+    net.tcp.buffersize.edge=6144,26280,35040,6144,16384,35040
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.respect_als=true
