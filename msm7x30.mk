@@ -108,7 +108,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.def.agps.mode=2 \
     ro.ril.def.agps.feature=1 \
     ro.telephony.call_ring.multiple=false \
-    wifi.supplicant_scan_interval=15 \
     keyguard.no_require_sim=true \
     ro.com.google.locationfeatures=1 \
     ro.product.locale.language=en \
@@ -144,6 +143,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tcp.buffersize.hspa=6144,87380,262144,6144,16384,262144 \
     net.tcp.buffersize.gprs=6144,8760,11680,6144,8760,11680 \
     net.tcp.buffersize.edge=6144,26280,35040,6144,16384,35040
+
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.transmitpower=true
+
+# Disable Sending Usage Data
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.nocheckin=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.respect_als=true
