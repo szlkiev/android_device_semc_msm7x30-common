@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
     device/semc/msm7x30-common/prebuilt/10hostapconf:system/etc/init.d/10hostapconf \
     device/semc/msm7x30-common/prebuilt/10dhcpcd:system/etc/init.d/10dhcpcd \
+    device/semc/msm7x30-common/prebuilt/11storage:system/etc/init.d/11storage \
     device/semc/msm7x30-common/prebuilt/ueventd.semc.rc:root/ueventd.semc.rc \
     device/semc/msm7x30-common/prebuilt/vold.fstab:system/etc/vold.fstab \
     device/semc/msm7x30-common/prebuilt/fstab:root/fstab \
