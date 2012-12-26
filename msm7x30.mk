@@ -153,6 +153,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.nocheckin=1
 
+# power saving
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.disable.power.collapse=0
+
+# Saves some battery without reducing performances
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.supplicant_scan_interval=180 \
+    pm.sleep_mode=1
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.respect_als=true
 
