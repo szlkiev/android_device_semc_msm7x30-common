@@ -34,6 +34,7 @@ busybox echo 25 > ${BOOTREC_LED_RED}
 busybox echo 255 > ${BOOTREC_LED_GREEN}
 busybox echo 0 > ${BOOTREC_LED_BLUE}
 busybox echo 255 > ${BOOTREC_LED_BUTTONS}
+busybox echo 50 > ${BOOTREC_VIBRATOR}
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
 busybox sleep 1
 
@@ -42,6 +43,7 @@ busybox echo 100 > ${BOOTREC_LED_RED}
 busybox echo 35 > ${BOOTREC_LED_GREEN}
 busybox echo 50 > ${BOOTREC_LED_BLUE}
 busybox echo 255 > ${BOOTREC_LED_BUTTONS}
+busybox echo 50 > ${BOOTREC_VIBRATOR}
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
 busybox sleep 1
 
@@ -50,6 +52,9 @@ busybox echo 0 > ${BOOTREC_LED_RED}
 busybox echo 100 > ${BOOTREC_LED_GREEN}
 busybox echo 255 > ${BOOTREC_LED_BLUE}
 busybox echo 255 > ${BOOTREC_LED_BUTTONS}
+
+# trigger vibrator
+busybox echo 200 > ${BOOTREC_VIBRATOR}
 
 # keycheckblue
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
