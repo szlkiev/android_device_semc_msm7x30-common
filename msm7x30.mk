@@ -125,6 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.lcd_min_brightness=20 \
     dalvik.vm.dexopt-data-only=1 \
     ro.debuggable=1 \
+    persist.sys.strictmode.visual=0 \
     persist.sys.strictmode.disable=1 \
     debug.performance.tuning=1 \
     video.accelerate.hw=1
