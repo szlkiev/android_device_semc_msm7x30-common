@@ -25,7 +25,6 @@ TARGET_NO_BOOTLOADER := true
 # Platform
 TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-TARGET_USES_2G_VM_SPLIT := true
 
 # Architecture
 TARGET_ARCH := arm
@@ -33,7 +32,6 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_HAVE_TSLIB := true
 
 # Scorpion optimizations
 TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
@@ -45,7 +43,6 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 # Kernel information
 BOARD_KERNEL_CMDLINE := console=null
 BOARD_KERNEL_BASE    := 0x00200000
-BOARD_RECOVERY_BASE  := 0x00200000
 
 # Custom boot
 TARGET_RECOVERY_PRE_COMMAND := "touch /cache/recovery/boot;sync;"
@@ -58,10 +55,6 @@ BOARD_USES_RECOVERY_CHARGEMODE := false
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_SDCARD_INTERNAL_DEVICE := /dev/block/mmcblk0p1
-
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -86,9 +79,6 @@ BOARD_EGL_NEEDS_LEGACY_FB := true
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QCOM_GPS := true
-BOARD_USES_QCOM_LIBS := true
-BOARD_USES_QCOM_LIBRPC := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_NO_SECURE_PLAYBACK
 
 # RIL
