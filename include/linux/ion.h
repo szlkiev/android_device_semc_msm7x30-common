@@ -52,14 +52,14 @@ enum ion_heap_type {
  * you are doing!
  */
 
-enum ion_heap_ids {
+/*enum ion_heap_ids {
 	ION_HEAP_SYSTEM_ID,
 	ION_HEAP_SYSTEM_CONTIG_ID,
 	ION_HEAP_EBI_ID,
 	ION_HEAP_SMI_ID,
 	ION_HEAP_ADSP_ID,
 	ION_HEAP_AUDIO_ID,
-};
+};*/
 
 #define ION_KMALLOC_HEAP_NAME	"kmalloc"
 #define ION_VMALLOC_HEAP_NAME	"vmalloc"
@@ -446,12 +446,12 @@ struct ion_custom_data {
  * of the handle, p + offset through p + offset + length will have
  * the cache operations performed
  */
-struct ion_flush_data {
+/*struct ion_flush_data {
 	struct ion_handle *handle;
 	void *vaddr;
 	unsigned int offset;
 	unsigned int length;
-};
+};*/
 
 /* struct ion_flag_data - information about flags for this buffer
  *
@@ -461,10 +461,10 @@ struct ion_flush_data {
  * Takes handle as an input and outputs the flags from the handle
  * in the flag field.
  */
-struct ion_flag_data {
+/*struct ion_flag_data {
 	struct ion_handle *handle;
 	unsigned long flags;
-};
+};*/
 
 #define ION_IOC_MAGIC		'I'
 
