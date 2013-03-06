@@ -51,8 +51,6 @@ PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh \
     device/semc/msm7x30-common/prebuilt/nandroid-md5.sh:root/sbin/nandroid-md5.sh
 
-#    device/semc/msm7x30-common/prebuilt/fillers:root/fillers \
-
 #Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
