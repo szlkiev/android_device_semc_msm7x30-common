@@ -90,7 +90,7 @@ TARGET_QCOM_DISPLAY_VARIANT := legacy
 BOARD_RIL_CLASS := ../../../device/semc/msm7x30-common/ril/
 
 # Sensor
-SOMC_CFG_DASH_INCLUDED := yes
+SOMC_CFG_SENSORS := yes
 
 # Light Sensor
 BOARD_SYSFS_LIGHT_SENSOR := /sys/class/leds/lcd-backlight/als/enable
