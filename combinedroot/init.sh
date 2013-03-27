@@ -29,38 +29,13 @@ busybox mount -t proc proc /proc
 busybox mount -t sysfs sysfs /sys
 busybox mount -t yaffs2 ${BOOTREC_CACHE} /cache
 
-# fixing CPU clocks to avoid issues in recovery
-busybox echo 1024000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-busybox echo 122000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-
-# trigger lime green LED & button-backlight
-busybox echo 25 > ${BOOTREC_LED_RED}
-busybox echo 255 > ${BOOTREC_LED_GREEN}
-busybox echo 0 > ${BOOTREC_LED_BLUE}
-busybox echo 255 > ${BOOTREC_LED_BUTTONS}
-busybox echo 50 > ${BOOTREC_VIBRATOR}
-busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
-busybox sleep 1
-
-# trigger pink LED & button-backlight
-busybox echo 100 > ${BOOTREC_LED_RED}
-busybox echo 35 > ${BOOTREC_LED_GREEN}
-busybox echo 50 > ${BOOTREC_LED_BLUE}
-busybox echo 255 > ${BOOTREC_LED_BUTTONS}
-busybox echo 50 > ${BOOTREC_VIBRATOR}
-busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
-busybox sleep 1
-
-# trigger aqua blue LED & button-backlight
-busybox echo 0 > ${BOOTREC_LED_RED}
-busybox echo 100 > ${BOOTREC_LED_GREEN}
+# trigger amber blue LED & button-backlight
+busybox echo 255 > ${BOOTREC_LED_RED}
+busybox echo 0 > ${BOOTREC_LED_GREEN}
 busybox echo 255 > ${BOOTREC_LED_BLUE}
 busybox echo 255 > ${BOOTREC_LED_BUTTONS}
 
-# trigger vibrator
-busybox echo 200 > ${BOOTREC_VIBRATOR}
-
-# keycheckblue
+# keycheck
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
 busybox sleep 3
 
@@ -72,10 +47,10 @@ if [ -s /dev/keycheck -o -e /cache/recovery/boot ]
 then
 	busybox echo 'RECOVERY BOOT' >>boot.txt
 	busybox rm -fr /cache/recovery/boot
-	# trigger gold led
-	busybox echo 90 > ${BOOTREC_LED_RED}
-	busybox echo 255 > ${BOOTREC_LED_GREEN}
-	busybox echo 0 > ${BOOTREC_LED_BLUE}
+	# trigger blue led
+	busybox echo 0 > ${BOOTREC_LED_RED}
+	busybox echo 0 > ${BOOTREC_LED_GREEN}
+	busybox echo 255 > ${BOOTREC_LED_BLUE}
 	busybox echo 0 > ${BOOTREC_LED_BUTTONS}
 	# framebuffer fix
 	busybox echo 0 > /sys/module/msm_fb/parameters/align_buffer
