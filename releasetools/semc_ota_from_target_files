@@ -336,7 +336,7 @@ def MakeRecoveryPatch(input_tmp, output_zip, recovery_img, boot_img):
   executable.
   """
 
- diff_program = ["imgdiff"]
+  diff_program = ["imgdiff"]
   path = os.path.join(input_tmp, "SYSTEM", "etc", "recovery-resource.dat")
   if os.path.exists(path):
     diff_program.append("-b")
@@ -380,7 +380,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   # change very often.
   script = edify_generator.EdifyGenerator(3, OPTIONS.info_dict)
 
-   metadata = {"post-build": GetBuildProp("ro.build.fingerprint",
+  metadata = {"post-build": GetBuildProp("ro.build.fingerprint",
                                          OPTIONS.info_dict),
               "pre-device": GetBuildProp("ro.product.device",
                                          OPTIONS.info_dict),
@@ -499,10 +499,10 @@ def WriteIncrementalOTAPackage(target_zip, source_zip, output_zip):
   if source_version == 0:
     print ("WARNING: generating edify script for a source that "
            "can't install it.")
-   script = edify_generator.EdifyGenerator(source_version,
+  script = edify_generator.EdifyGenerator(source_version,
                                           OPTIONS.target_info_dict)
 
-   metadata = {"pre-device": GetBuildProp("ro.product.device",
+  metadata = {"pre-device": GetBuildProp("ro.product.device",
                                          OPTIONS.source_info_dict),
               "post-timestamp": GetBuildProp("ro.build.date.utc",
                                              OPTIONS.target_info_dict),
