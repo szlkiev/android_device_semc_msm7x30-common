@@ -793,7 +793,7 @@ class Difference(object):
     tf = self.tf
     sf = self.sf
 
-     if self.diff_program:
+    if self.diff_program:
       diff_program = self.diff_program
     else:
       ext = os.path.splitext(tf.name)[1]
