@@ -38,12 +38,30 @@ busybox echo ${BOOTREC_LED_BUTTONS2_CURRENT} > ${BOOTREC_LED_BUTTONS2}/max_curre
 busybox echo ${BOOTREC_LED_LCD_CURRENT} > ${BOOTREC_LED_LCD}/max_current
 busybox echo ${BOOTREC_LED_LCD_MODE} > ${BOOTREC_LED_LCD}/mode
 
-# trigger amber LED & button-backlight
-busybox echo 255 > ${BOOTREC_LED_RED}/brightness
-busybox echo 0 > ${BOOTREC_LED_GREEN}/brightness
-busybox echo 255 > ${BOOTREC_LED_BLUE}/brightness
+# trigger lime green LED & button-backlight
+busybox echo 25 > ${BOOTREC_LED_RED}/brightness
+busybox echo 255 > ${BOOTREC_LED_GREEN}/brightness
+busybox echo 0 > ${BOOTREC_LED_BLUE}/brightness
 busybox echo 255 > ${BOOTREC_LED_BUTTONS}/brightness
 busybox echo 255 > ${BOOTREC_LED_BUTTONS2}/brightness
+busybox echo 50 > /sys/class/timed_output/vibrator/enable
+busybox sleep 1
+
+# trigger pink LED
+busybox echo 100 > ${BOOTREC_LED_RED}/brightness
+busybox echo 35 > ${BOOTREC_LED_GREEN}/brightness
+busybox echo 50 > ${BOOTREC_LED_BLUE}/brightness
+busybox echo 50 > /sys/class/timed_output/vibrator/enable
+busybox sleep 1
+
+# trigger aqua blue LED
+busybox echo 0 > ${BOOTREC_LED_RED}/brightness
+busybox echo 100 > ${BOOTREC_LED_GREEN}/brightness
+busybox echo 255 > ${BOOTREC_LED_BLUE}/brightness
+busybox echo 200 > /sys/class/timed_output/vibrator/enable
+
+#trigger vibrator
+#echo 100 > /sys/class/timed_output/vibrator/enable
 
 # keycheck
 busybox cat ${BOOTREC_EVENT} > /dev/keycheck&
