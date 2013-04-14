@@ -180,7 +180,7 @@ static void cm_power_set_interactive(struct power_module *module, int on)
 {
     char governor[80];
 
-    if (strncmp(governor, "ondemand", 8) == 0)	
+    if (strncmp(governor, "ondemand", 8) == 0)
         sysfs_write(SAMPLING_RATE_ONDEMAND,
                 on ? SAMPLING_RATE_SCREEN_ON : SAMPLING_RATE_SCREEN_OFF);
     else
@@ -191,7 +191,7 @@ static void cm_power_init(struct power_module *module)
 {
     char governor[80];
 
-    if (strncmp(governor, "ondemand", 8) == 0)	
+    if (strncmp(governor, "ondemand", 8) == 0)
         sysfs_write(SAMPLING_RATE_ONDEMAND, SAMPLING_RATE_SCREEN_ON);
     else
         ALOGV("Skipping sysfs_write to sampling_rate -- NOT using ondemand");

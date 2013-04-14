@@ -42,13 +42,11 @@ PRODUCT_COPY_FILES += \
     device/semc/msm7x30-common/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
     device/semc/msm7x30-common/prebuilt/10hostapconf:system/etc/init.d/10hostapconf \
     device/semc/msm7x30-common/prebuilt/10dhcpcd:system/etc/init.d/10dhcpcd \
-    device/semc/msm7x30-common/prebuilt/11storage:system/etc/init.d/11storage \
     device/semc/msm7x30-common/prebuilt/ueventd.semc.rc:root/ueventd.semc.rc \
     device/semc/msm7x30-common/prebuilt/vold.fstab:system/etc/vold.fstab \
     device/semc/msm7x30-common/prebuilt/fstab:root/fstab \
     device/semc/msm7x30-common/prebuilt/fstab.semc:root/fstab.semc \
-    device/semc/msm7x30-common/prebuilt/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh \
-    device/semc/msm7x30-common/prebuilt/nandroid-md5.sh:root/sbin/nandroid-md5.sh
+    device/semc/msm7x30-common/prebuilt/postrecoveryboot.sh:root/sbin/postrecoveryboot.sh
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -106,6 +104,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.def.agps.mode=2 \
     ro.ril.def.agps.feature=1 \
     ro.telephony.call_ring.multiple=false \
+    wifi.supplicant_scan_interval=15 \
     keyguard.no_require_sim=true \
     ro.com.google.locationfeatures=1 \
     ro.product.locale.language=en \
@@ -120,50 +119,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     hwui.disable_vsync=true \
     debug.mdpcomp.logs=0 \
     BUILD_UTC_DATE=0 \
-    persist.sys.usb.config=mass_storage,adb \
+    persist.sys.usb.config=mass_storage \
     debug.camcorder.disablemeta=1 \
-    ro.lcd_min_brightness=20 \
-    dalvik.vm.dexopt-data-only=1 \
     ro.debuggable=1 \
     persist.sys.strictmode.visual=0 \
-    persist.sys.strictmode.disable=1 \
-    debug.performance.tuning=1 \
-    video.accelerate.hw=1
-
-# Better video streaming
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.enable-meta=true \
-    media.stagefright.enable-scan=true \
-    media.stagefright.enable-http=true \
-    media.stagefright.enable-record=false
-
-# Better internet browsing & download speed
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tcp.buffersize.default=6144,87380,110208,6144,16384,110208 \
-    net.tcp.buffersize.wifi=262144,524288,1048576,262144,524288,1048576 \
-    net.tcp.buffersize.hsdpa=6144,262144,1048576,6144,262144,1048576 \
-    net.tcp.buffersize.umts=6144,87380,110208,6144,16384,110208 \
-    net.tcp.buffersize.hspa=6144,87380,262144,6144,16384,262144 \
-    net.tcp.buffersize.gprs=6144,8760,11680,6144,8760,11680 \
-    net.tcp.buffersize.edge=6144,26280,35040,6144,16384,35040
-
-# System prop for sending transmit power request to RIL during WiFi hotspot on/off
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ril.transmitpower=true
-
-# Disable Sending Usage Data
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.nocheckin=1
-
-# power saving
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ril.disable.power.collapse=0
-
-# Saves some battery without reducing performances
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.supplicant_scan_interval=180 \
-    pm.sleep_mode=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.respect_als=true
-
+    persist.sys.strictmode.disable=1

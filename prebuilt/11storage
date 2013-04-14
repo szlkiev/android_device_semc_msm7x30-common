@@ -1,6 +1,0 @@
-#!/system/xbin/ash
-
-/system/bin/insmod /system/lib/modules/usb-storage.ko
-/system/bin/insmod /system/lib/modules/fuse.ko
-/system/bin/insmod /system/lib/modules/ntfs.ko
-/system/bin/insmod /system/lib/modules/scsi_wait_scan.ko
